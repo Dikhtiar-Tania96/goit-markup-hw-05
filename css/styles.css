@@ -13,6 +13,7 @@
   --border-photos: #eeeeee;
   --color: rgba(47, 48, 58, 0.8);
   --color-opasity: rgba(33, 150, 243, 0.9);
+  --color-text-thumb: rgba(255, 255, 255, 1);
 
   
 }
@@ -417,11 +418,6 @@
   padding: 30px;
 }
 
-
-
-
-
-
 .photos {
   display: flex;
   width: 270px;
@@ -448,19 +444,23 @@
 }
 
 .photo-thumb::before{
-  display: inline-flex;
+  display: flex;
   position: absolute;
   content: '';
   bottom: 0;
   width: 370px;
   height: 70px;
-  background-color: var(--color);
   opacity: 0;
-}
+
+  transition-property: background-color;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} 
 
 .photo-thumb:hover::before{
   opacity: 1;
-}
+  background-color: var(--color);
+} 
 
 .text-thumb{
   position: absolute;
@@ -471,7 +471,9 @@
   letter-spacing: 0.03em;
   bottom: 17px;
   left: 100px;
-  opacity: 0;
+  opacity: 0; 
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-thumb:hover,
@@ -656,19 +658,25 @@ border-color: var(--accent-color);
   content: '';
   width: 100%;
   height: 100%;
-  background-color: var(--color-opasity);
   opacity: 0;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-thumb:hover::before{
   opacity: 1;
+  background-color: var(--color-opasity)
 }
+
 .text-portfolio{
   position:absolute;
-  color: var(--white-color);
-  /* padding: 63px 24px; */
+  color: var(--color-text-thumb);
+  padding: 63px 24px;
   font-size: 18px;
+  line-height: 1.5;
   letter-spacing: 0.03em;
+  margin: 0;
   top:0;
   left: 0;
   opacity: 0;
