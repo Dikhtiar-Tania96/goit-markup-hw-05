@@ -60,16 +60,11 @@
       <section class="section">
         <div class="container">
           <h1 class="headline">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button-active">Замовити послугу</button>
+          <button type="button" class="button-active" data-modal-open>Замовити послугу</button>
         </div>
       </section>
 
-      <div  class="backdrop is-hidden">
-        <div class="modal">
-          <button>Закрити</button>
-        </div>
-      </div>
-
+      
       <section class="visually-hidden-style">
         <div class="container">
           <h2 class="visually-hidden">Наші особливості</h2>
@@ -479,5 +474,13 @@
       </div>
     </div>
     </footer>
+
+    <div  class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" data-modal-close>Закрити</button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
