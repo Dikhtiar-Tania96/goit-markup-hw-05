@@ -77,6 +77,7 @@
 
 .button-modal-close{
   position: absolute;
+  display: flex;
   border-radius: 50%;
   background-color: var(--white-color);
 
@@ -85,11 +86,9 @@
   height: 30px;
 
   left: 470px;
-  /* position: relative; */
   align-items: center;
   justify-content: center;
-  /* width: 100%;
-  height: 100%; */
+
 
   cursor: pointer;
 }
@@ -370,8 +369,8 @@
   max-width: 696px;
   text-align: center;
   color: var(--white-color);
-  font-family: Raleway, sans-serif;
-  /* font-weight: 900; */
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
@@ -392,7 +391,8 @@
   letter-spacing: 0.03em;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
   
 
@@ -426,6 +426,10 @@
 .button:focus {
   background-color: var(--accent-color);
   color: var(--white-color);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+
 }
 
 .visually-hidden-style {
@@ -550,24 +554,21 @@
   display: flex;
   position: absolute;
   bottom: 0;
-  width: 370px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 70px;
   background-color: var(--color);
-  padding-top: 27px;
-  padding-bottom: 27px;
 } 
 
 
 .text-thumb{
-  position: absolute;
   color:var(--white-color);
   font-size: 14px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  bottom: 17px;
-  left: 100px;
-  opacity: 1;
+  margin: 0;
 
 }
 
@@ -647,7 +648,8 @@
   margin: auto;
 
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ; 
 }
 
 .client :hover,
@@ -755,7 +757,8 @@ border-color: var(--accent-color);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
-.images-element:hover .portfolio-overlay{
+.images:hover .portfolio-overlay,
+.images:focus .portfolio-overlay{
   transform: translateY(0)
 }
 
@@ -776,7 +779,8 @@ border-color: var(--accent-color);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
-.images-element:hover .text-portfolio{
+.images:hover .text-portfolio,
+.images:focus .text-portfolio{
   transform: translateY(0);
 }
 
@@ -895,14 +899,15 @@ background-color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  widows: 100%;
+  width: 100%;
   height: 100%;
   border-radius: 50%;
   fill:var(--second-color);
   background-color: var(--white-color);
   cursor: pointer;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 
